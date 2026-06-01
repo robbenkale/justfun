@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Tracklethics",
+  "description": "High school, regional, and multi-level athletics tracker in Ontario, tracking scores, schools, teams, and athletes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

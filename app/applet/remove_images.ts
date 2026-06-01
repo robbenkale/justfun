@@ -1,0 +1,12 @@
+import fs from 'fs';
+import path from 'path';
+const filepath = '/app/applet/src/fixtures.ts';
+let data = fs.readFileSync(filepath, 'utf8');
+data = data.replace(/logoUrl:\s*'https:\/\/images\.unsplash\.com[^']*'/g, "logoUrl: undefined");
+data = data.replace(/authorAvatar:\s*'https:\/\/images\.unsplash\.com[^']*'/g, "authorAvatar: undefined");
+fs.writeFileSync(filepath, data);
+const pagesPath = '/app/applet/src/components/pages.tsx';
+let pagesData = fs.readFileSync(pagesPath, 'utf8');
+pagesData = pagesData.replace(/<img[^>]*src="https:\/\/images\.unsplash\.com[^>]*>/g, "");
+fs.writeFileSync(pagesPath, pagesData);
+console.log('done replacement');
